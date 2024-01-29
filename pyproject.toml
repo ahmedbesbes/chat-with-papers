@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "upstash-rag"
+version = "0.1.0"
+description = ""
+authors = ["Ahmed Besbes <ahmed.besbes@hotmail.com>"]
+readme = "README.md"
+packages = [{include = "upstash_rag"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+langchain = "^0.1.4"
+upstash-vector = "^0.1.5"
+python-dotenv = "^1.0.1"
+tqdm = "^4.66.1"
+google-cloud-aiplatform = "^1.40.0"
+langchain-openai = "^0.0.5"
+langchain-google-vertexai = "^0.0.3"
+streamlit = "^1.30.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
