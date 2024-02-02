@@ -82,7 +82,7 @@ Then hit the create button:
 
 ![](./assets/app_url.png)
 
-xzNow you can visit the app:
+Now you can visit the app:
 
 ![](./assets/deployed_app.png)
 
