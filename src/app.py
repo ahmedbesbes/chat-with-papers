@@ -1,8 +1,17 @@
+import os
+from dotenv import load_dotenv
 import streamlit as st
 from langchain_google_vertexai import VertexAIEmbeddings
+from google.cloud import aiplatform
 from src.rag import RAG
 
 st.set_page_config(layout="wide")
+load_dotenv()
+
+aiplatform.init(
+    project=os.environ.get("PROJECT_ID"),
+    location="europe-west1",
+)
 
 
 @st.cache_resource
