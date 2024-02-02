@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-from langchain_openai import AzureChatOpenAI
+from langchain_openai import ChatOpenAI
 from upstash_vector import Index
 from prompts import RAG_PROMPT_TEMPLATE
 from src.upstash import UpstashVectorStore
@@ -24,9 +24,7 @@ class RAG:
     def set_llm(self):
         chat_box = self.chat_box.container().empty()
         stream_handler = StreamHandler(chat_box)
-        llm = AzureChatOpenAI(
-            deployment_name="chat-model",
-            model="gpt-3.5-turbo",
+        llm = ChatOpenAI(
             max_tokens=400,
             streaming=True,
             callbacks=[stream_handler],
